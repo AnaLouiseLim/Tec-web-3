@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
+use App\Http\Controllers\Atividade2;
+
+Route::resource('usuarios', Atividade2::class);
 
 Route::inertia('/', 'welcome', [
     'canRegister' => Features::enabled(Features::registration()),
