@@ -3,7 +3,13 @@
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 use App\Http\Controllers\Atividade2;
+use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\PedidoController;
+use App\Http\Controllers\ProdutoController;
 
+Route::resource('clientes', ClienteController::class);
+Route::resource('pedidos', PedidoController::class);
+Route::resource('produtos', ProdutoController::class);
 Route::resource('usuarios', Atividade2::class);
 
 Route::inertia('/', 'welcome', [
