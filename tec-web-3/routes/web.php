@@ -12,6 +12,12 @@ Route::resource('pedidos', PedidoController::class);
 Route::resource('produtos', ProdutoController::class);
 Route::resource('usuarios', Atividade2::class);
 
+Route::get('/novo/', function(){
+    return view ('novo');
+});
+
+Route::get('usuarios', [UserController::class, 'index']);
+
 Route::inertia('/', 'welcome', [
     'canRegister' => Features::enabled(Features::registration()),
 ])->name('home');
