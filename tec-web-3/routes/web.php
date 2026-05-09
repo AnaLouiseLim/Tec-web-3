@@ -6,6 +6,7 @@ use App\Http\Controllers\Atividade2;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\UserController;
 
 Route::resource('clientes', ClienteController::class);
 Route::resource('pedidos', PedidoController::class);
