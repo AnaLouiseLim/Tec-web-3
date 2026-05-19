@@ -1,10 +1,11 @@
 @extends('layout.padrao')
 @section('conteudo')
 <div>
-    @foreach($users as $users)
+    @foreach($users as $user)
 
     <div>
-        {{$users->name}} <br>
+        {{$user->name}} <br>
     </div>
+    @endforeach
 </div>
 @endsection

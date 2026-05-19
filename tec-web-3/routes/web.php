@@ -17,8 +17,6 @@ Route::get('/novo/', function(){
     return view ('novo');
 });
 
-Route::get('usuarios', [UserController::class, 'index']);
-
 Route::inertia('/', 'welcome', [
     'canRegister' => Features::enabled(Features::registration()),
 ])->name('home');
@@ -26,6 +24,11 @@ Route::inertia('/', 'welcome', [
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::inertia('dashboard', 'dashboard')->name('dashboard');
 });
+
+Route::get('/usuarios', [UserController::class, 'index']);
+
+Route::get('/usuario/{id}', [UserController::class, 'show']);
+
 
 Route::resource('tec-web-3', App\Http\Controllers\Atividade2::class);
 
